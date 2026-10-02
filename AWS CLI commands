@@ -1,0 +1,7 @@
+AWS CLI commands
+#!/bin/bash
+aws cloudwatch describe-alarms \
+  --alarm-names "Swetha-EC2-High-CPU" \
+  --region eu-north-1 \
+  --query 'MetricAlarms[].{Name:AlarmName,State:StateValue}' \
+  --output table
